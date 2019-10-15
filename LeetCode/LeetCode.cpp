@@ -3,10 +3,23 @@
 
 #include "pch.h"
 #include <iostream>
-
+#include "LeetCode.h"
+void test_inorderTraversal()
+{
+	TreeNode* n1 = new TreeNode(1);
+	TreeNode* n2 = new TreeNode(2);
+	TreeNode* n3 = new TreeNode(3);
+	n1->right = n2;
+	n2->left = n3;
+	auto result = inorderTraversal(n1);
+	for (auto e : result)
+	{
+		cout << e << endl;
+	}
+}
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	test_inorderTraversal();
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单

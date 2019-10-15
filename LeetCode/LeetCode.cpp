@@ -4,6 +4,14 @@
 #include "pch.h"
 #include <iostream>
 #include "LeetCode.h"
+#include "MyQueueByStack.h"
+template<typename T>
+void debug(T arg)
+{
+#ifdef _DEBUG
+	cout << arg << endl;
+#endif // DEBUG
+}
 void test_inorderTraversal()
 {
 	TreeNode* n1 = new TreeNode(1);
@@ -17,9 +25,19 @@ void test_inorderTraversal()
 		cout << e << endl;
 	}
 }
+void test_MyQueueByStack()
+{
+	MyQueue test;
+	test.push(1);
+	test.push(2);
+	debug(test.peek());
+	debug(test.pop());
+	test.empty();
+}
 int main()
 {
-	test_inorderTraversal();
+	//test_inorderTraversal();
+	test_MyQueueByStack();
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单

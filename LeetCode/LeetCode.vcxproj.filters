@@ -21,12 +21,18 @@
     <ClInclude Include="LeetCode.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="MyQueueByStack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="LeetCode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyQueueByStack.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

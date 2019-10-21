@@ -34,10 +34,15 @@ void test_MyQueueByStack()
 	debug(test.pop());
 	test.empty();
 }
+void test_decodeString() { 
+	string result = decodeString("3[a]2[bc]");
+	cout << result << endl;
+}
 int main()
 {
 	//test_inorderTraversal();
-	test_MyQueueByStack();
+	//test_MyQueueByStack();
+	test_decodeString();
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单

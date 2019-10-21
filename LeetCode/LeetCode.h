@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 #include <stack>
+#include <string>
+#include <algorithm>
 using namespace std;
 // Definition for a binary tree node.
 struct TreeNode {
@@ -44,4 +46,53 @@ vector<int> inorderTraversal(TreeNode* root) {
 		}
 	}
 	return result;
+}
+string decodeString(string s) {
+	// 测试用例：
+	// s = "3[a]2[bc]", 返回 "aaabcbc".
+	// s = "3[a2[c]]", 返回 "accaccacc".
+	// s = "2[abc]3[cd]ef", 返回 "abcabccdcdcdef".
+	string str;
+	stack<string> substrs;
+	stack<int>  times;
+	bool start = false;
+	for (size_t i = 0,length = s.size(); i < length; i++)
+	{
+		if (isdigit(s[i]))  // 为数字则压入计数栈
+		{
+			// 计算数字大小
+			int num = s[i] - '0';
+			i++;
+			while (isdigit(s[i]))
+			{
+				num = num * 10 + (s[i] - '0');
+				i++;
+			}
+			i--;
+			times.push(num);
+		}
+		else if (s[i] == '[') // 为'['则开始记录字符串，并将之前的存入字符串栈中
+		{
+			substrs.push(str);
+			str.clear();
+		}
+		else if (s[i] == ']') // 为']'或者到达结束，则用计数栈顶展开当前字符串
+		{
+			string &newstr = substrs.top();
+			// 重复，可优化
+			for (size_t i = 0,length = times.top(); i < length; i++)
+			{
+				newstr += str;
+			}
+			str = newstr;
+			substrs.pop();
+			times.pop();
+		}
+		else
+		{
+			str += s[i];
+		}
+		
+	}
+	return str;
 }

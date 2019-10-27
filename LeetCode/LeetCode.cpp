@@ -38,6 +38,27 @@ void test_decodeString() {
 	string result = decodeString("3[a]2[bc]");
 	cout << result << endl;
 }
+void test_addTwoNumbers()
+{
+	ListNode* li1_2 = new ListNode(1);
+	ListNode* li1_4 = new ListNode(0);
+	ListNode* li1_3 = new ListNode(0);
+	li1_2->next = li1_4;
+	li1_4->next = li1_3;
+
+	ListNode* li2_5 = new ListNode(9);
+	ListNode* li2_6 = new ListNode(9);
+	ListNode* li2_4 = new ListNode(0);
+	li2_5->next = li2_6;
+	li2_6->next = li2_4;
+
+	auto ret = addTwoNumbers(li1_2, li2_5);
+	while (ret)
+	{
+		cout << ret->val;
+		ret = ret->next;
+	}
+}
 int main()
 {
 	//test_inorderTraversal();

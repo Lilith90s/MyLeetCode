@@ -3,14 +3,11 @@
 #include <stack>
 #include <string>
 #include <algorithm>
+
+#include "Base.h"
 using namespace std;
 // Definition for a binary tree node.
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
+
 vector<int> result;
 vector<int> inorderTraversal(TreeNode* root) {
 	// 递归遍历
@@ -98,6 +95,7 @@ string decodeString(string s) {
 	return str;
 }
 
+<<<<<<< HEAD
 // 中心索引
 int pivoIndex(vector<int>& nums)
 {
@@ -125,4 +123,54 @@ int pivoIndex(vector<int>& nums)
 		}
 	}
 	return -1;
+=======
+ListNode * addTwoNumbers(ListNode * l1, ListNode * l2)
+{
+	ListNode* ret = new ListNode(0);
+	ListNode* now = ret;
+	// 记录当前节点的前驱
+	ListNode* pre = nullptr;
+	int num1;
+	int num2;
+	// 记录进位
+	bool carry = false;
+	while (l1 != nullptr || l2 != nullptr)
+	{
+		// 取值
+		if (l1 == nullptr)
+		{
+			num1 = 0;
+		}
+		else
+		{
+			num1 = l1->val;
+			l1 = l1->next;
+		}
+		if (l2 == nullptr)
+		{
+			num2 = 0;
+		}
+		else
+		{
+			num2 = l2->val;
+			l2 = l2->next;
+		}
+		ListNode*nowNode = new ListNode(0);
+		now->val = (num1 + num2 + carry) % 10;
+		now->next = nowNode;
+		pre = now;
+		now = now->next;
+		carry = (num1 + num2 + carry) / 10;
+	}
+	if (carry == true)
+	{
+		now->val = 1;
+	}
+	else
+	{
+		delete now;
+		pre->next = nullptr;
+	}
+	return ret;
+>>>>>>> 9f933aa4d25ce6c7250b6fdd6faede4c1995577d
 }

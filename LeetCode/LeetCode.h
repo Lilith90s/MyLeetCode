@@ -95,25 +95,25 @@ string decodeString(string s) {
 	return str;
 }
 
-<<<<<<< HEAD
+
 // 中心索引
 int pivoIndex(vector<int>& nums)
 {
 	// 初始化
-	int left = 0,suml = 0;
+	int left = 0, suml = 0;
 	int right = nums.size() - 1, sumr = 0;
 	int result = -1;
 	int sum = 0;
-	for (size_t i = 0,length = nums.size(); i < length; i++)
+	for (size_t i = 0, length = nums.size(); i < length; i++)
 	{
 		sum += nums[i];
 	}
-	for (size_t i = 0,length = nums.size(); i < length; i++)
+	for (size_t i = 0, length = nums.size(); i < length; i++)
 	{
 		// 左边总和，不包含本次值
 		if (i != 0)
 		{
-			suml += nums[i-1];
+			suml += nums[i - 1];
 		}
 		// 右边总和=总和减去左边与本次值
 		sumr = sum - suml - nums[i];
@@ -123,7 +123,7 @@ int pivoIndex(vector<int>& nums)
 		}
 	}
 	return -1;
-=======
+}
 ListNode * addTwoNumbers(ListNode * l1, ListNode * l2)
 {
 	ListNode* ret = new ListNode(0);
@@ -172,5 +172,4 @@ ListNode * addTwoNumbers(ListNode * l1, ListNode * l2)
 		pre->next = nullptr;
 	}
 	return ret;
->>>>>>> 9f933aa4d25ce6c7250b6fdd6faede4c1995577d
 }

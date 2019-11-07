@@ -38,12 +38,11 @@ void test_decodeString() {
 	string result = decodeString("3[a]2[bc]");
 	cout << result << endl;
 }
-<<<<<<< HEAD
 void test_pivoIndex() {
 	vector<int> arg1{ 1,7,3,6,5,6 };
-	vector<int> arg2{ -1,-1,-1,0,1,1};
+	vector<int> arg2{ -1,-1,-1,0,1,1 };
 	cout << pivoIndex(arg2) << endl;
-=======
+}
 void test_addTwoNumbers()
 {
 	ListNode* li1_2 = new ListNode(1);
@@ -64,7 +63,6 @@ void test_addTwoNumbers()
 		cout << ret->val;
 		ret = ret->next;
 	}
->>>>>>> 9f933aa4d25ce6c7250b6fdd6faede4c1995577d
 }
 int main()
 {

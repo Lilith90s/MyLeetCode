@@ -89,10 +89,40 @@ string decodeString(string s) {
 			times.pop();
 		}
 		else
+
 		{
 			str += s[i];
 		}
 		
 	}
 	return str;
+}
+
+// 中心索引
+int pivoIndex(vector<int>& nums)
+{
+	// 初始化
+	int left = 0,suml = 0;
+	int right = nums.size() - 1, sumr = 0;
+	int result = -1;
+	int sum = 0;
+	for (size_t i = 0,length = nums.size(); i < length; i++)
+	{
+		sum += nums[i];
+	}
+	for (size_t i = 0,length = nums.size(); i < length; i++)
+	{
+		// 左边总和，不包含本次值
+		if (i != 0)
+		{
+			suml += nums[i-1];
+		}
+		// 右边总和=总和减去左边与本次值
+		sumr = sum - suml - nums[i];
+		if (suml == sumr)
+		{
+			return i;
+		}
+	}
+	return -1;
 }

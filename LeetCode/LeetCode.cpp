@@ -38,11 +38,17 @@ void test_decodeString() {
 	string result = decodeString("3[a]2[bc]");
 	cout << result << endl;
 }
+void test_pivoIndex() {
+	vector<int> arg1{ 1,7,3,6,5,6 };
+	vector<int> arg2{ -1,-1,-1,0,1,1};
+	cout << pivoIndex(arg2) << endl;
+}
 int main()
 {
 	//test_inorderTraversal();
 	//test_MyQueueByStack();
-	test_decodeString();
+	// test_decodeString();
+	test_pivoIndex();
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单

@@ -5,6 +5,7 @@
 #include <iostream>
 #include "LeetCode.h"
 #include "MyQueueByStack.h"
+#include "Arrays.h"
 template<typename T>
 void debug(T arg)
 {
@@ -64,12 +65,41 @@ void test_addTwoNumbers()
 		ret = ret->next;
 	}
 }
+
+void test_setZeroes()
+{
+	vector<vector<int>> data = {
+		{{0,1,2,0}
+		,{3,4,5,2}
+		,{1,3,1,5}}
+	};
+	setZeroes(data);
+	for (size_t i = 0; i < data.size(); i++)
+	{
+		for (size_t j = 0; j < data[i].size(); j++)
+		{
+			cout << data[i][j] << ",";
+		}
+		cout << endl;
+	}
+}
+
+void test_longestCommonPrefix()
+{
+	vector<string> data = {
+		 {"aca"}
+		,{"cba"}
+		//,{"flight"}
+	};
+	auto prefix = longestCommonPrefix(data);
+	cout << prefix << endl;
+}
 int main()
 {
 	//test_inorderTraversal();
 	//test_MyQueueByStack();
 	// test_decodeString();
-	test_pivoIndex();
+	test_longestCommonPrefix();
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单

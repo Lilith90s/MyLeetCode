@@ -27,6 +27,9 @@
     <ClInclude Include="Base.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Arrays.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

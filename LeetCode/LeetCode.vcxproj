@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Arrays.h" />
     <ClInclude Include="Base.h" />
     <ClInclude Include="LeetCode.h" />
     <ClInclude Include="MyQueueByStack.h" />
